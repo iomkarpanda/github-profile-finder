@@ -87,4 +87,10 @@ nav{
     background-color: #1e1e1e;
     color: white;
     font-size: 16px;
+    white-space: nowrap;      /* text stays in one line */
+    overflow: hidden;         /* hides overflow */
+    text-overflow: ellipsis
+}
+.repo-links{
+    text-overflow: clip;
 }

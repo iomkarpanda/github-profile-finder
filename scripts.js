@@ -20,7 +20,9 @@ async function fetch_data(username) {
             repoElement.innerHTML = ''
             for(let i=0;i<json.length;i++){
                 const element = document.createElement('div')
-                element.textContent = json[i].full_name
+                element.innerHTML = `<p>Repo Name : ${json[i].full_name}</p>
+                                    <p> Repo Link:</p>
+                                    <a href = ${json[i].html_url} class = 'repo-links'>${json[i].html_url}</a>`
                 element.className = 'repo-items'
                 repoElement.appendChild(element)
             }
