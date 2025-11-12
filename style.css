@@ -13,22 +13,24 @@ body{
 }
 
 nav{
-    width: 100vw;
+    width: 90vw;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* background-color: red; */
+    background-color: red;
 }
 
 .logo{
     color:white;
+    width: 250px;
+
 }
 
 .empty{
     width: 80vw;
     height: 10vh;
-    /* background-color: pink; */
+    background-color: pink;
 }
 
 #input{
@@ -70,27 +72,66 @@ nav{
     border-radius: 20px;
 }
 
-.repo{
-    width: 80vw;
-    height: auto;
-    box-sizing: border-box;
-    background-color: red;
+#repo {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center; 
+  align-items: start;
+  box-sizing: border-box;
+  background-color: red;
+  padding: 20px;
 }
 
-.repo-items {
-    width: 250px;
-    height: auto;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: #1e1e1e;
-    color: white;
-    font-size: 16px;
-    white-space: nowrap;      /* text stays in one line */
-    overflow: hidden;         /* hides overflow */
-    text-overflow: ellipsis
+
+@media (max-width: 768px) and (min-width: 591px) {
+  #repo {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+
+@media (max-width: 590px) {
+  #repo {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.repo-items {
+  width: 100%; 
+  max-width: 250px; 
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* justify-self: center;  */
+}
+
 .repo-links{
     text-overflow: clip;
+}
+
+#profile{
+    width: 30vw;
+    height: auto;
+    background-color:#121212 ;
+    border: 1px solid white;
+    color:white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+}
+
+#profile-image{
+    width: 50px;
+    height:50px;
 }
