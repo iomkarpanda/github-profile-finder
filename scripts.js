@@ -42,7 +42,7 @@ async function fetch_userdata(username) {
         else{
             const profileElement = document.getElementById("profile")
             profileElement.innerHTML = '<p>Please Check Username'
-            
+
         }
     } catch  {
         console.log("Error in Username")
@@ -56,7 +56,7 @@ async function fetch_repodata(username) {
         let json = await response.json()
         if(response.status === 200){
             const repoElement = document.getElementById("repo")
-           
+            document.getElementById("repo").innerHTML = "";
             for(let i=0;i<json.length;i++){
                 const element = document.createElement('div')
                 element.innerHTML = `<p>${json[i].name}</p>
@@ -70,7 +70,8 @@ async function fetch_repodata(username) {
         else{
             const repoElement = document.getElementById("repo")
             const element = document.createElement('div')
-            element.innerHTML = "<p>Please Check UserName</p>"
+            profileElement.style.display = "block";
+            profileElement.innerHTML = '<p>Please check the username</p>';
             element.className = "error-username"
             repoElement.appendChild(element)
         }
