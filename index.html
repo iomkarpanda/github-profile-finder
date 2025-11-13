@@ -9,9 +9,10 @@
 <body>
     <nav>
         <div class="logo">Github Profile Info</div>
-        <div class="empty"></div>
+        <div class="empty">
+            <a href="">Reach me</a>
+        </div>
     </nav>
-
     <div class="container">
 
         <div class="username">
@@ -21,9 +22,29 @@
             <button type="submit" id="submit-btn">Fetch</button>
         </div>
 
-        <div id="profile"></div>
+        <div id="profile">
+            <img id="profile-image" src="IMAGE_URL">
+
+            <div class="profile-name">USERNAME</div>
+            <div class="profile-label">Profile</div>
+
+            <div class="profile-divider"></div>
+
+            <div class="profile-bio">BIO_TEXT</div>
+
+            <div class="profile-divider"></div>
+
+            <div class="profile-info">📍 LOCATION</div>
+            <div class="profile-info">👥 FOLLOWERS</div>
+            <div class="profile-info">➡️ FOLLOWING</div>
+            <div class="profile-info">📦 PUBLIC REPOS</div>
+        </div>
         <div id="repo"></div>
-    </div>  
+    </div>
+
+    <footer>
+        <p>Made with 💖 by Omkar </p>
+    </footer>
 
     <script src="scripts.js"></script>
 </body>

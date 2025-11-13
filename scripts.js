@@ -18,17 +18,23 @@ async function fetch_userdata(username) {
         const {login,avatar_url,html_url,location,bio,followers,following,public_repos} = await response.json()
         const profileElement = document.getElementById("profile")
         profileElement.innerHTML = `
-                                        <img src = ${avatar_url} id = 'profile-image'/>
-                                        <p>User Name : ${login}</p>
-                                        <label> Profile url </label>
-                                        <a href = ${html_url}>${html_url}</a>
-                                        <p>Bio:${bio}</p>
-                                        <p>Location :${location}
-                                        <p>follwers:${followers}
-                                        <p>following :${following}
-                                        <p>public_repos:${public_repos}
+                                <img src="${avatar_url}" id="profile-image" />
 
-                                        `
+                                <p class="profile-name">${login}</p>
+                                <p class="profile-label"><a href="${html_url}" target="_blank">View Profile</a></p>
+
+                                <div class="profile-divider"></div>
+
+                                <p class="profile-section-title">Bio</p>
+                                <p class="profile-bio">${bio ? bio : "No bio available"}</p>
+
+                                <div class="profile-divider"></div>
+
+                                <p class="profile-info">📍 ${location ? location : "Unknown"}</p>
+                                <p class="profile-info">👥 Followers: ${followers}</p>
+                                <p class="profile-info">➡️ Following: ${following}</p>
+                                <p class="profile-info">📦 Public Repos: ${public_repos}</p>
+                            `;
         profileElement.style.display = 'block'
         document.getElementsByClassName('username')[0].style.display = 'none'
     } catch  {
@@ -48,10 +54,10 @@ async function fetch_repodata(username) {
            
             for(let i=0;i<json.length;i++){
                 const element = document.createElement('div')
-                element.innerHTML = `<p>Repo Name : ${json[i].full_name}</p>
-                                    <p> Repo Link:</p>
-                                    <a href = ${json[i].html_url} class = 'repo-links'>${json[i].html_url}</a>
-                                    <p>Created at = ${json[i].created_at}`
+                element.innerHTML = `<p>${json[i].name}</p>
+                                    <a href = ${json[i].html_url} class = 'repo-links'>Repo</a>
+                                    <p>Forks: ${json[i].forks}</p>
+                                    `
                 element.className = 'repo-items'
                 repoElement.appendChild(element)
             }
